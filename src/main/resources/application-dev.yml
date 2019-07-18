@@ -38,9 +38,9 @@ mybatis:
     mapperLocations: classpath:mapper/*.xml
     #实体类所做包
     type-aliases-package: com.base.boot.model
-    #打印SQL语句
-    configuration:
-        log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+#    #打印SQL语句
+#    configuration:
+#        log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
 #分页插件
 pagehelper:
     # oracle
