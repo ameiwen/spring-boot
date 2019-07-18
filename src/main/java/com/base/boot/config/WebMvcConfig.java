@@ -51,7 +51,7 @@ public class WebMvcConfig extends WebMvcConfigurationSupport {
     @Override
     protected void addInterceptors(InterceptorRegistry registry) {
         registry.addInterceptor(getMyInterceptor())
-                .addPathPatterns("/account/**")
+                .addPathPatterns("/users/**")
                 .addPathPatterns("/order/**")
                 .addPathPatterns("/bank/**");
         super.addInterceptors(registry);
