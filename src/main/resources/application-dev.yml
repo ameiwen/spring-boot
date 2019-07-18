@@ -43,6 +43,7 @@ mybatis:
         log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
 #分页插件
 pagehelper:
+    # oracle
     helperDialect: mysql
     reasonable: true
     supportMethodsArguments: true

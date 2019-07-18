@@ -24,14 +24,16 @@ public class UserServiceImpl implements UserService {
     private UsersMapper usersMapper;
 
     @Override
-    public Result selectUsersList(Page<Users> page) {
+    public Result selectUsersList(Page<Users> page,Users users) {
         try {
             UsersExample example = new UsersExample();
             example.setOrderByClause("id desc");
+            UsersExample.Criteria criteria = example.createCriteria();
+            criteria.andCreateTimeEqualTo(users.getCreateTime());
             //分页
             PageHelper.startPage(page.getPageNum(), page.getPageSize());
-            List<Users> users = usersMapper.selectByExample(example);
-            PageInfo<Users> pageInfo = new PageInfo<Users>(users);
+            List<Users> list = usersMapper.selectByExample(example);
+            PageInfo<Users> pageInfo = new PageInfo<Users>(list);
             Result result = Result.ok("操作成功");
             result.put("data",pageInfo);
             return result;

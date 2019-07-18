@@ -1,8 +1,12 @@
 package com.base.boot.model;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+import org.springframework.format.annotation.DateTimeFormat;
+
 import java.util.Date;
 
 public class Users {
+
     private Integer id;
 
     private String name;
@@ -11,6 +15,8 @@ public class Users {
 
     private String sex;
 
+    @DateTimeFormat(pattern = "yyyyMMddHHmmss")
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private Date createTime;
 
     public Integer getId() {

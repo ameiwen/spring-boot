@@ -8,6 +8,6 @@ import com.github.pagehelper.Page;
 
 public interface UserService {
 
-    Result selectUsersList(Page<Users> page);
+    Result selectUsersList(Page<Users> page,Users users);
 
 }

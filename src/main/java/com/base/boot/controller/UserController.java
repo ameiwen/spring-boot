@@ -16,8 +16,15 @@ public class UserController {
     private UserService userService;
 
     @GetMapping(value = "/userList")
-    public Result userList(Page<Users> page){
-        return userService.selectUsersList(page);
+    public Result userList(Page<Users> page,Users users){
+        return userService.selectUsersList(page,users);
     }
+
+
+    @GetMapping(value = "/updateUser")
+    public Result updateUser(Users user){
+        return Result.ok();
+    }
+
 
 }
